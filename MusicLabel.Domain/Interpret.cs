@@ -1,6 +1,6 @@
 namespace MusicLabel.Domain;
 
-class Interpret
+public class Interpret
 {
     public int Id { get; set; }
     public string Kuenstlername { get; set; }
