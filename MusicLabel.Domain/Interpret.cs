@@ -7,9 +7,10 @@ public class Interpret
     public string Genre { get; set; }   
     public decimal Tagesgage { get; set; }
 
-    public Interpret(string kuenstlername, decimal tagesgage)
+    public Interpret(string kuenstlername, string genre, decimal tagesgage)
     {
         Kuenstlername = kuenstlername;
+        Genre = genre;
         Tagesgage = tagesgage;
     }
 

@@ -13,7 +13,14 @@ public static class Preisrechner
     }
     public static decimal BerechneTicketpreis(decimal grundpreis, int anzahl, bool istFanclubMitglied)
     {
-        return BerechneTicketpreis(grundpreis, anzahl, 15);
+        if (istFanclubMitglied)
+        {
+            return BerechneTicketpreis(grundpreis, anzahl, 15);        
+        }
+        else
+        {
+            return BerechneTicketpreis(grundpreis, anzahl);
+        }
     }
 
     public static decimal BerechneAlbumpreis(int anzahlTitel, decimal preisProTitel)
