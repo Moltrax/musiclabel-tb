@@ -16,6 +16,11 @@ public static class Preisrechner
         return BerechneTicketpreis(grundpreis, anzahl, 15);
     }
 
+    public static decimal BerechneAlbumpreis(int anzahlTitel, decimal preisProTitel)
+    {
+        return BerechneTicketpreis(preisProTitel, anzahlTitel);
+    }
+
     public static decimal BerechneAlbumpreis(int anzahlTitel, decimal preisProTitel, decimal rabattInProzent = 0m)
     {
         return BerechneTicketpreis(preisProTitel, anzahlTitel, rabattInProzent);
