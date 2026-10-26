@@ -4,11 +4,23 @@ public static class Preisrechner
 {
     public static decimal BerechneTicketpreis(decimal grundpreis, int anzahl)
     {
+        if(anzahl <= 0)
+        {
+            throw new ArgumentOutOfRangeException();
+        }
+        if(grundpreis < 0m)
+        {
+            throw new ArgumentOutOfRangeException();
+        }
         return grundpreis * anzahl;
     }
 
     public static decimal BerechneTicketpreis(decimal grundpreis, int anzahl, decimal rabattInProzent)
     {
+        if(rabattInProzent > 100m)
+        {
+            throw new ArgumentOutOfRangeException();
+        }
         return BerechneTicketpreis(grundpreis, anzahl) * (1 - (rabattInProzent / 100));
     }
     public static decimal BerechneTicketpreis(decimal grundpreis, int anzahl, bool istFanclubMitglied)
@@ -25,11 +37,19 @@ public static class Preisrechner
 
     public static decimal BerechneAlbumpreis(int anzahlTitel, decimal preisProTitel)
     {
+        if(anzahlTitel <= 0m)
+        {
+            throw new ArgumentOutOfRangeException();
+        }
         return BerechneTicketpreis(preisProTitel, anzahlTitel);
     }
 
     public static decimal BerechneAlbumpreis(int anzahlTitel, decimal preisProTitel, decimal rabattInProzent = 0m)
     {
+        if(rabattInProzent < 0m)
+        {
+            throw new ArgumentOutOfRangeException();
+        }
         return BerechneTicketpreis(preisProTitel, anzahlTitel, rabattInProzent);
     }
 

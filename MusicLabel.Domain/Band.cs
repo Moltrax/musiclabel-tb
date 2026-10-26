@@ -19,12 +19,20 @@ public class Band
 
     public Band(string name, int gruendungsjahr)
     {
+        if(string.IsNullOrWhiteSpace(name))
+        {
+            throw new ArgumentException();
+        }
         Name = name;
         Gruendungsjahr = gruendungsjahr;
     }
 
     public void FuegeMitgliedHinzu(Musiker musiker)
     {
+        if (musiker == null)
+        {
+            throw new ArgumentNullException();
+        }
         mitglieder.Add(musiker);
     }
 }

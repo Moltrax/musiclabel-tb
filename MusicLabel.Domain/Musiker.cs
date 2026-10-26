@@ -11,6 +11,19 @@ public class Musiker
 
     public Musiker(string vorname, string nachname, string instrument)
     {
+        if (string.IsNullOrWhiteSpace(vorname))
+        {
+            throw new ArgumentException();
+        }
+        if (string.IsNullOrWhiteSpace(nachname))
+        {
+            throw new ArgumentException();
+        }
+        if (string.IsNullOrWhiteSpace(instrument))
+        {
+            throw new ArgumentException();
+        }
+        
         Vorname = vorname;
         Nachname = nachname;
         Instrument = instrument;

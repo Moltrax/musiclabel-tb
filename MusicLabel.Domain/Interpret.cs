@@ -9,6 +9,14 @@ public class Interpret
 
     public Interpret(string kuenstlername, string genre, decimal tagesgage)
     {
+        if (string.IsNullOrWhiteSpace(kuenstlername))
+        {
+            throw new ArgumentException();
+        }
+        if (tagesgage < 0m)
+        {
+            throw new ArgumentOutOfRangeException();
+        }
         Kuenstlername = kuenstlername;
         Genre = genre;
         Tagesgage = tagesgage;
@@ -16,6 +24,10 @@ public class Interpret
 
     public decimal BerechneGage(int tage)
     {
+        if(tage <= 0)
+        {
+            throw new ArgumentOutOfRangeException();
+        }
         return Tagesgage * tage;
     }
 }
