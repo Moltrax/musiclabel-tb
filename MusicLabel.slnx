@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="MusicLabel.Data/MusicLabel.Data.csproj" />
+  <Project Path="MusicLabel.Domain/MusicLabel.Domain.csproj" />
+  <Project Path="MusicLabel.Tests/MusicLabel.Tests.csproj" />
+  <Project Path="MusicLabel.Web/MusicLabel.Web.csproj" />
+</Solution>
