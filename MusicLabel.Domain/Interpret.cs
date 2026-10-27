@@ -2,7 +2,7 @@ namespace MusicLabel.Domain;
 
 public class Interpret
 {
-    public int Id { get; set; }
+    public int? Id { get; set; }
     public string Kuenstlername { get; set; }
     public string Genre { get; set; }   
     public decimal Tagesgage { get; set; }
